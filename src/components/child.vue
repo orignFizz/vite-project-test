@@ -2,7 +2,7 @@
     <div>
         我是子组件内容
         {{ nameObj.name }}
-        修改一下内容
+        我又测试来了
     </div>
 </template>
 
