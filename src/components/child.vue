@@ -13,7 +13,11 @@
     }
     defineExpose({ childFun })
 
-    const nameObj = inject('info')
+    interface type {
+        name: '',
+        age: ''
+    }
+    let nameObj = <type>inject('info')
     console.log(nameObj, 33);
     
 
