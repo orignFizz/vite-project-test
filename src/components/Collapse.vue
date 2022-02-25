@@ -2,7 +2,7 @@
     <span :class="{'is-active':isActive}" class="hamburger" @click="handleClick" />
 </template>
 
-<script setup>
+<script lang="ts" setup>
     import { ref } from 'vue'
     const isActive = ref(false)
     const emit = defineEmits(['toggleClick'])

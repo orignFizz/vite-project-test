@@ -9,12 +9,12 @@
     </div>
 </template>
 
-<script setup>
+<script lang="ts" setup>
     import Sidebar from './components/sidebar.vue'
     import Collapse from '../components/Collapse.vue'
     import { ref } from 'vue'
     let collapseFlag = ref(false)
-    function toggleSidebar(res) {
+    function toggleSidebar(res: any) {
         collapseFlag.value = res.value
     }
 </script>
