@@ -4,24 +4,23 @@
     .navbar {
         height: 50px;
         line-height: 50px;
-        border: 1px solid #ccc;
-        text-align: center;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04)
     }
     // 下部内容区
     .main-container {
         display: flex;
-        min-height: calc(100% - 50px);
-        
+        min-height: calc(100% - 52px);
+        margin-top: 2px;
+
         .sidebar-container {
             transition: .28s;
             width: 210px !important;
-            border: 1px solid #ccc;
         }
 
         .app-main {
             transition: .28s;
             width: calc(100% - 210px);
-            border: 1px solid #ccc;
         }
     }
 

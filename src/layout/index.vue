@@ -1,6 +1,6 @@
 <template>
     <div class="app-wrapper">
-        <div class="navbar">我是上部分导航区</div>
+        <Navbar />
         <div :class="{'collapse': collapseFlag}" class="main-container">
             <Sidebar :isCollapse="collapseFlag" class="sidebar-container" />
             <Collapse @toggle-click="toggleSidebar"/>
@@ -12,6 +12,7 @@
 <script lang="ts" setup>
     import Sidebar from './components/sidebar.vue'
     import Collapse from '../components/Collapse.vue'
+    import Navbar from './components/navbar.vue'
     import { ref } from 'vue'
     let collapseFlag = ref(false)
     function toggleSidebar(res: any) {
