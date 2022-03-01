@@ -2,17 +2,20 @@
     <div>
         我是父组件内容
         <el-button @click="handleClick">点击</el-button>
+        我是计数器：{{ num }}
         <child ref="childRef" msg="hello Word" type="a" />
     </div>
 </template>
 
 <script lang="ts" setup>
-import { provide, ref } from 'vue'
+import { computed, provide, ref } from 'vue'
 import { useStore } from 'vuex'
     const childRef = ref()
+    const store = useStore()
     let handleClick = () => {
         // console.log(childRef);
         childRef.value.childFun()
+        store.dispatch('test/increment', {num: 4})
     }
 
     const obj = {
@@ -21,11 +24,9 @@ import { useStore } from 'vuex'
     }
     let someValue: any = 'this is a string'
     let strLength: number = (someValue).length
-    console.log(strLength, 33);
-    
-    // const store = useStore()
-    // console.log(store.state.num, 3333);
-
+    console.log(store.state.test);
+    const num = computed(() => store.state.test.num)
+    // console.log(strLength, 33);
     // enum Color { red, green , blue}
     // let c: Color = Color.green
     // let d: string = Color[2]

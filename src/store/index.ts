@@ -1,9 +1,13 @@
 import { createStore } from "vuex";
 
+const modulesFiles = import.meta.globEager('./modules/*.ts')
+const modules = <any>[]
+for (let key in modulesFiles) {
+    let myKey = key.replace(/^\.\/(.*)\.\w+$/, '$1').replace('modules/', '')
+    modules[myKey] = modulesFiles[key].default
+}
 const store = createStore({
-    state() {
-        return { num: 1 }
-    }
+    modules
 })
 
 export default store
